@@ -2,7 +2,7 @@
 
 Discente: JOÃO VICTOR IANE GOIS PRESIDEU                                          
 
-LISTA 1
+LISTA 1 - CAPÍTULO 01
 
 QUESTÃO 1
 A arquitetura de segurança OSI (Open System Interconnection) oferece uma estrutura sistemática para definir ataques à segurança, mecanismo e serviços. E é útil para os gerentes como um meio de organizar a tarefa de prover segurança.
@@ -64,5 +64,132 @@ Já a disponibilidade do sistema host é importante para o bem-estar econômico 
 QUESTÃO 7
 
 ![QUESTÃO 7](https://raw.githubusercontent.com/JoaoPresideu/Seguranca_de_Redes_Sergio/main/1.jpg?token=GHSAT0AAAAAACUMBLHQYP6LZLBCGGBQYGX2ZURMJQQ)
+
+
+
+
+LISTA 2 - CAPÍTULO 02
+
+QUESTÃO 1
+A) 
+Os   elementos   essenciais   são   o   texto   claro,   algoritmo   de   criptografia,   chavesecreta, texto cifrado, algoritmo de descriptografia.
+
+B) 
+As   funções   básicas   são   proteger   os   dados   digitais,   tendo   algoritmo   de   cifrar e decifrar como as principais
+
+C)
+Uma cifra em fluxo é uma cifra que processa os elementos da entrada (bytes, usualmente) continuamente, produzindo a saída de um elemento de cada vez, enquanto prossegue.
+Uma cifra de bloco processa a entrada de um bloco de elementos (bytes) de
+cada vez, medido por sua quantidade de bits, produzindo um bloco de saída para cada bloco de entrada.
+O processamento por fluxo é mais rápido do que por bloco.
+
+D)
+As tecnicas usadas são a criptoanálise e ataque por força bruta sobre a chave.
+
+E)
+Os problemas são que a chave   precisa ser usada uma única vez. Se repetida, ela pode   ser   facilmente quebrada. Essa  era a principal  vulnerabilidadede uma cifra semelhante , o outro problema  é que  a chave  precisa  ser  tão   longa quanto a mensagem. Isso implica numa grande dificuldade de gerar  e armazenar chaves para mensagens longas.
+
+F)
+É uma técnica de criptografia que reorganiza as posições dos caracteres no texto, sem alterar os próprios caracteres.
+
+G)
+Esteganografia é uma técnica que consiste em esconder um arquivo  dentro do outro, de forma   criptografada. Porém,ao contrário da criptografia, que visa deixar as mensagens incompreensíveis,   esta tem como objetivo esconder a existência de uma determinada mensagem, camuflando-a dentro   de outros arquivos,  imagens, músicas, vídeos ou textos. Sendo assim, é   possível, por exemplo,   esconder mensagens dentro de  imagens sem que outras pessoas desconfiem que existe alguma coisa escrita ali.
+
+
+QUESTÃO 2 
+A -   
+Não. Uma mudança no valor de b muda a relação entre letras de texto plano e letras de texto cifrado para a esquerda ou direita uniformemente, de modo que, se o mapeamento for um para um, ele permanece um para um
+
+B-
+ 2, 4, 6, 8, 10, 12, 13, 14, 16, 18, 20, 22, 24. Qualquer valor maior do que 25 é equivalente para a mod 26.
+
+C-
+Os valores  de  a  e  26 não  devem  ter  um  fator  inteiro positivo comum  diferente de 1.  Isto é equivalente a dizer que a e 26 são relativamente primos, ou que o maior divisor comum de um e 26 é 1. Para ver isto, primeiro note que E (a, p) = E (a, q) (0 ≤ p ≤ q <26) se e somente se a (p - q) é divisível por 26. 1. Suponha que a e 26 sejam relativamente primos. Então, um (p - q) não é divisível por 26, porque não tem jeito para reduzir a fração a / 26 e (p - q) é menor que 26. 2. Suponha que a e 26 têm um fator comum k> 1. Então E (a, p) = E (a, q), se q = p + m / k ≠ p.
+
+![QUESTÃO 3](https://raw.githubusercontent.com/JoaoPresideu/Seguranca_de_Redes_Sergio/main/2.jpg?token=GHSAT0AAAAAACUMBLHQ63XWXAT3VMPRSGOGZURMSNQ)
+
+
+QUESTÃO 4
+
+def encrypt(text, shift):
+    result = ""
+    for char in text:
+        if char.isalpha():
+            base = ord('A') if char.isupper() else ord('a')
+            result += chr((ord(char) - base + shift) % 26 + base)
+        else:
+            result += char
+    return result
+
+def decrypt(text, shift):
+    return encrypt(text, 26 - shift)
+
+def main():
+    text = input("Digite o texto: ")
+    shift = int(input("Digite o valor de deslocamento: "))
+    
+  encrypted = encrypt(text, shift)
+  print("Texto encriptado: " + encrypted)
+    
+  decrypted = decrypt(encrypted, shift)
+  print("Texto decriptado: " + decrypted)
+
+if __name__ == "__main__":
+    main()
+
+
+QUESTÃO 5
+
+from collections import Counter
+import string
+
+portuguese_letter_freq = {
+    'A': 14.63, 'E': 12.57, 'O': 10.73, 'S': 7.81, 'R': 6.53, 'I': 6.18,
+    'N': 5.05, 'D': 4.99, 'M': 4.74, 'U': 4.63, 'T': 4.34, 'C': 3.88,
+    'L': 2.78, 'P': 2.52, 'V': 1.67, 'G': 1.30, 'H': 1.28, 'Q': 1.20,
+    'B': 1.04, 'F': 1.02, 'Z': 0.47, 'J': 0.40, 'X': 0.21, 'K': 0.02,
+    'Y': 0.01, 'W': 0.01
+}
+
+def decrypt_caesar(ciphertext, shift):
+    decrypted_text = []
+    for char in ciphertext:
+        if char.isalpha():
+            shift_amount = shift if char.islower() else shift % 26
+            decrypted_char = chr((ord(char) - shift_amount - 97) % 26 + 97) if char.islower() else chr((ord(char) - shift_amount - 65) % 26 + 65)
+            decrypted_text.append(decrypted_char)
+        else:
+            decrypted_text.append(char)
+    return ''.join(decrypted_text)
+
+def frequency_analysis(ciphertext):
+    counter = Counter(filter(str.isalpha, ciphertext.upper()))
+    total_chars = sum(counter.values())
+    char_freq = {char: (count / total_chars) * 100 for char, count in counter.items()}
+    return char_freq
+
+def score_text(text, freq_table):
+    text_freq = frequency_analysis(text)
+    score = sum(abs(text_freq.get(char, 0) - freq_table.get(char, 0)) for char in freq_table)
+    return score
+
+def decrypt_caesar_cipher(ciphertext, top_n=10):
+    possible_texts = [(decrypt_caesar(ciphertext, shift), shift) for shift in range(26)]
+    scored_texts = sorted(possible_texts, key=lambda x: score_text(x[0], portuguese_letter_freq))
+    return scored_texts[:top_n]
+
+# Texto cifrado de exemplo
+ciphertext = "exemplo de texto cifrado aqui"
+
+# Número de textos claros mais prováveis a serem exibidos
+top_n = 10
+resultados = decrypt_caesar_cipher(ciphertext, top_n)
+
+for texto, chave in resultados:
+print(f"Chave: {chave}, Texto: {texto}")
+
+
+
+
 
 
