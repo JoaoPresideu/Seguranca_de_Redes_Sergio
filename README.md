@@ -6,6 +6,7 @@ LISTA 1 - CAPÍTULO 01
 
 QUESTÃO 1
 A arquitetura de segurança OSI (Open System Interconnection) oferece uma estrutura sistemática para definir ataques à segurança, mecanismo e serviços. E é útil para os gerentes como um meio de organizar a tarefa de prover segurança.
+
 QUESTÃO 2
 A diferença é que um Ataque passivo tenta descobrir ou utilizar informações do sistema, mas não afeta seus recursos. Um ataque ativo tenta alterar os recursos do sistema ou afeta sua operação.
 
@@ -71,6 +72,7 @@ QUESTÃO 7
 LISTA 2 - CAPÍTULO 02
 
 QUESTÃO 1
+
 A) 
 Os   elementos   essenciais   são   o   texto   claro,   algoritmo   de   criptografia,   chavesecreta, texto cifrado, algoritmo de descriptografia.
 
@@ -97,6 +99,7 @@ Esteganografia é uma técnica que consiste em esconder um arquivo  dentro do ou
 
 
 QUESTÃO 2 
+
 A -   
 Não. Uma mudança no valor de b muda a relação entre letras de texto plano e letras de texto cifrado para a esquerda ou direita uniformemente, de modo que, se o mapeamento for um para um, ele permanece um para um
 
