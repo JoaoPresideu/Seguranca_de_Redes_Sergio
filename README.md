@@ -1,26 +1,65 @@
 # Seguranca_de_Redes_Sergio
-Capítulo 2 - Questões
 
-1°:
-a) Os elementos essenciais de uma cifra simétrica são a chave e o algoritmo de criptografia.
+Discente: JOÃO VICTOR IANE GOIS PRESIDEU                                          
 
-b) As duas funções básicas usadas nos algoritmos de criptografia são a função de criptografia e a função de decriptografia.
+LISTA 1
 
-c)A diferença entre uma cifra de bloco e uma cifra de fluxo é que a cifra de bloco opera em blocos fixos de dados, enquanto a cifra de fluxo opera em dados contínuos, cifrando-os um bit (ou byte) de cada vez.
+QUESTÃO 1
+A arquitetura de segurança OSI (Open System Interconnection) oferece uma estrutura sistemática para definir ataques à segurança, mecanismo e serviços. E é útil para os gerentes como um meio de organizar a tarefa de prover segurança.
+QUESTÃO 2
+A diferença é que um Ataque passivo tenta descobrir ou utilizar informações do sistema, mas não afeta seus recursos. Um ataque ativo tenta alterar os recursos do sistema ou afeta sua operação.
 
-d)As duas técnicas gerais para atacar uma cifra são ataques de força bruta, que tentam todas as possíveis chaves, e ataques de criptoanálise, que exploram fraquezas no algoritmo de criptografia para encontrar a chave ou os dados originais.
+QUESTÃO 3
+Os Ataques Passivos possuem a natureza de bisbilhotar ou monitorar transmissões. O objetivo é obter informações que estão sendo transmitida. Dois tipos de ataques passivos são: liberação do conteúdo da mensagem e análise de trafego.
+Os Ataques Ativos envolvem alguma modificação do fluxo de dados ou a criação de um fluxo falso e podem ser subdivido em quatro categorias: disfarce, repetição, modificação de mensagens e negação de serviço.
 
-e)Os dois problemas com o one-time pad são a necessidade de chaves tão longas quanto os dados a serem cifrados e a necessidade de que cada chave seja usada apenas uma vez para garantir segurança absoluta.
+QUESTÃO 4
 
-f)Uma cifra de transposição é um tipo de cifra na qual os caracteres ou blocos de texto são rearranjados de acordo com uma chave específica, sem modificar o conteúdo dos caracteres.
+1. Autenticação
+Verifica a identidade de usuários ou sistemas antes de conceder acesso a recursos. Um exemplo é o uso de nome de usuário e senha para login.
 
-g) Esteganografia é a prática de esconder mensagens ou informações dentro de arquivos, imagens ou outros dados de forma que a presença da informação seja oculta para observadores externos.
-***
-2°:
-a) Sim, existem limitações sobre o valor de b na cifra de César afim. O valor de b deve ser tal que a fórmula (ap + b) mod 26 gere resultados únicos para cada valor de p. Se b não for cuidadosamente escolhido, pode haver colisões, ou seja, dois valores diferentes de p podem produzir o mesmo resultado C. Isso viola o requisito básico de que o algoritmo de criptografia deve ser um-para-um. Portanto, para garantir que a cifra seja um-para-um, b deve ser um número inteiro coprimo com 26.
+2. Controle de Acesso
+Determina e aplica quem pode acessar ou modificar recursos específicos. Um exemplo é a configuração de permissões de leitura e escrita em arquivos.
 
-b) Os valores de a que não são permitidos são aqueles que compartilham um fator comum com 26, exceto 1. Isso ocorre porque, se a e 26 tiverem fatores em comum, então os caracteres de texto claro serão mapeados em ciclos que não cobrem todo o alfabeto, tornando a decriptação impossível ou ambígua. Portanto, os valores de a não permitidos são aqueles que não são coprimos com 26.
+3. Confidencialidade
+Assegura que informações só sejam acessíveis a indivíduos autorizados. A criptografia de dados é um exemplo dessa prática.
 
-c) Uma afirmação geral sobre os valores de a permitidos na cifra de César afim é que a deve ser coprimo com 26 para garantir que a cifra seja um-para-um. Isso ocorre porque, se a e 26 tiverem fatores em comum, então os caracteres de texto claro serão mapeados em ciclos que não cobrem todo o alfabeto, tornando a decriptação impossível ou ambígua. Portanto, a escolha comum para a é selecionar um número primo em relação a 26, garantindo assim que a cifra seja um-para-um.
-***
-3°:
+4. Integridade
+Garante que os dados não sejam alterados ou corrompidos sem autorização. Ferramentas como assinaturas digitais e checksums são usadas para esse fim.
+
+5. Não Repúdio
+Previne que uma entidade negue a realização de uma ação ou comunicação previamente realizada. Isso é conseguido através de registros de log e assinaturas digitais.
+
+6. Disponibilidade
+Assegura que os recursos e serviços estejam acessíveis para usuários autorizados sempre que necessário. Medidas contra ataques de negação de serviço (DoS) são exemplos dessa prática.
+
+7. Auditoria e Monitoramento
+Registra e analisa atividades no sistema para detectar e responder a comportamentos suspeitos. Logs de segurança e sistemas de detecção de intrusões (IDS) são exemplos de ferramentas utilizadas para essa finalidade.
+
+Esses serviços são essenciais para garantir uma proteção abrangente e eficaz dos sistemas e dados contra diversas ameaças e ataques.
+
+
+QUESTÃO 5
+
+Sistema de Detecção e Prevenção de Intrusões (IDS/IPS): É qualquer processo(ou um dispositivo incorporado tal processo) projetado para detectar, impedir, ou permitir a recuperação deum ataque à segurança. 
+Criptografia: Protege a confidencialidade e a integridade dos dados ao transformá-los em um formato ilegível para qualquer pessoa que não tenha a chave de decodificação.
+Assinaturas Digitais: Garantem a autenticidade e a integridade dos dados, funcionando como uma assinatura eletrônica que verifica a identidade do remetente e assegura que o conteúdo não foi alterado.
+Controle de Acesso: Restringe o acesso a recursos e informações apenas para usuários autorizados, garantindo que apenas pessoas ou sistemas com permissões adequadas possam acessar dados sensíveis.
+ Certificados Digitais: Utilizados para verificar a identidade de uma entidade (pessoa, organização, servidor) através de uma autoridade certificadora confiável.
+ Firewalls: Dispositivos ou programas que filtram o tráfego de rede, bloqueando acessos não autorizados e protegendo a rede interna de ameaças externas.
+ Sistemas de Detecção de Intrusões (IDS): Monitoram a rede ou sistemas para detectar atividades suspeitas ou maliciosas, alertando os administradores sobre possíveis ataques.
+Autenticação: Processo de verificação da identidade de um usuário ou dispositivo antes de permitir o acesso a recursos, normalmente usando senhas, tokens ou biometria.
+Controle de Integridade: Garante que os dados não foram alterados ou corrompidos de forma não autorizada, frequentemente usando somas de verificação (hashes) para verificar a integridade dos dados.
+Esses mecanismos trabalham de forma integrada para garantir a confidencialidade, integridade, disponibilidade e autenticidade das informações, essenciais para a segurança em redes de computadores.
+QUESTÃO 6
+
+O sistema deve manter os números de identificação pessoal confidenciais, tanto no sistema do 
+host quanto durante a transmissão de uma transação , assim isso é de alta importância.
+Também deve proteger a integridade dos registros de contas e de transações individuais, logo também tem alta importancia.
+Já a disponibilidade do sistema host é importante para o bem-estar econômico do banco, mas não à sua responsabilidade fiduciária. A disponibilidade de caixas eletrônicos individuais é menos preocupante, então podemos considerar de importância média.
+
+
+
+QUESTÃO 7
+
+
