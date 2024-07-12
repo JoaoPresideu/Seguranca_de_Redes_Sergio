@@ -108,7 +108,9 @@ B-
 C-
 Os valores  de  a  e  26 não  devem  ter  um  fator  inteiro positivo comum  diferente de 1.  Isto é equivalente a dizer que a e 26 são relativamente primos, ou que o maior divisor comum de um e 26 é 1. Para ver isto, primeiro note que E (a, p) = E (a, q) (0 ≤ p ≤ q <26) se e somente se a (p - q) é divisível por 26. 1. Suponha que a e 26 sejam relativamente primos. Então, um (p - q) não é divisível por 26, porque não tem jeito para reduzir a fração a / 26 e (p - q) é menor que 26. 2. Suponha que a e 26 têm um fator comum k> 1. Então E (a, p) = E (a, q), se q = p + m / k ≠ p.
 
-![QUESTÃO 3](https://raw.githubusercontent.com/JoaoPresideu/Seguranca_de_Redes_Sergio/main/2.jpg?token=GHSAT0AAAAAACUMBLHQ63XWXAT3VMPRSGOGZURMSNQ)
+QUESTÃO 3
+
+![2](https://github.com/user-attachments/assets/1ab3ed4c-3497-4e44-9fca-83d72b4a6d93)
 
 
 QUESTÃO 4
