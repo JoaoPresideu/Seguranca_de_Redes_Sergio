@@ -5,12 +5,15 @@ Discente: JOÃO VICTOR IANE GOIS PRESIDEU
 LISTA 1 - CAPÍTULO 01
 
 QUESTÃO 1
+
 A arquitetura de segurança OSI (Open System Interconnection) oferece uma estrutura sistemática para definir ataques à segurança, mecanismo e serviços. E é útil para os gerentes como um meio de organizar a tarefa de prover segurança.
 
 QUESTÃO 2
+
 A diferença é que um Ataque passivo tenta descobrir ou utilizar informações do sistema, mas não afeta seus recursos. Um ataque ativo tenta alterar os recursos do sistema ou afeta sua operação.
 
 QUESTÃO 3
+
 Os Ataques Passivos possuem a natureza de bisbilhotar ou monitorar transmissões. O objetivo é obter informações que estão sendo transmitida. Dois tipos de ataques passivos são: liberação do conteúdo da mensagem e análise de trafego.
 Os Ataques Ativos envolvem alguma modificação do fluxo de dados ou a criação de um fluxo falso e podem ser subdivido em quatro categorias: disfarce, repetição, modificação de mensagens e negação de serviço.
 
@@ -191,6 +194,58 @@ resultados = decrypt_caesar_cipher(ciphertext, top_n)
 
 for texto, chave in resultados:
 print(f"Chave: {chave}, Texto: {texto}")
+
+QUESTÃO 6
+
+import numpy as np
+
+# Função para encriptar uma mensagem usando a cifra de Hill 2x2
+def encrypt(message, key):
+    message = message.upper().replace(" ", "")  # Convertendo para maiúsculas e removendo espaços
+    n = len(message)
+    
+   # Ajustando o tamanho da mensagem para um múltiplo de 2
+   if n % 2 != 0:
+        message += 'X'
+        n += 1
+    
+   message_nums = [ord(char) - ord('A') for char in message]
+   message_matrix = np.array(message_nums).reshape(-1, 2)
+    
+   encrypted_message = ''
+    for pair in message_matrix:
+        encrypted_pair = np.dot(key, pair) % 26
+        encrypted_message += ''.join([chr(num + ord('A')) for num in encrypted_pair])
+    
+    return encrypted_message
+
+# Função para decriptar uma mensagem usando a cifra de Hill 2x2
+def decrypt(encrypted_message, key):
+    key_inv = np.linalg.inv(key)  # Calculando a matriz inversa da chave
+    key_inv = np.round(key_inv * np.linalg.det(key)).astype(int) % 26  # Convertendo para inteiros módulo 26
+    
+   encrypted_message = encrypted_message.upper().replace(" ", "")  # Convertendo para maiúsculas e removendo espaços
+   n = len(encrypted_message)
+  
+encrypted_nums = [ord(char) - ord('A') for char in encrypted_message]
+encrypted_matrix = np.array(encrypted_nums).reshape(-1, 2)
+    
+decrypted_message = ''
+for pair in encrypted_matrix:
+        decrypted_pair = np.dot(key_inv, pair) % 26
+        decrypted_message += ''.join([chr(num + ord('A')) for num in decrypted_pair])
+    
+return decrypted_message
+
+key = np.array([[3, 5], [7, 2]])  # Chave fixa para simplificação
+message = "HELLO WORLD"
+
+encrypted_message = encrypt(message, key)
+print(f"Mensagem encriptada: {encrypted_message}")
+
+decrypted_message = decrypt(encrypted_message, key)
+print(f"Mensagem decriptada: {decrypted_message}")
+
 
 
 
