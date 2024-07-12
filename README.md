@@ -118,132 +118,14 @@ QUESTÃO 3
 
 QUESTÃO 4
 
-def encrypt(text, shift):
-    result = ""
-    for char in text:
-        if char.isalpha():
-            base = ord('A') if char.isupper() else ord('a')
-            result += chr((ord(char) - base + shift) % 26 + base)
-        else:
-            result += char
-    return result
-
-def decrypt(text, shift):
-    return encrypt(text, 26 - shift)
-
-def main():
-    text = input("Digite o texto: ")
-    shift = int(input("Digite o valor de deslocamento: "))
-    
-  encrypted = encrypt(text, shift)
-  print("Texto encriptado: " + encrypted)
-    
-  decrypted = decrypt(encrypted, shift)
-  print("Texto decriptado: " + decrypted)
-
-if __name__ == "__main__":
-    main()
+![questão4](https://github.com/user-attachments/assets/1955b827-5608-4fd2-a238-03233981bc15)
 
 
 QUESTÃO 5
 
-from collections import Counter
-import string
-
-portuguese_letter_freq = {
-    'A': 14.63, 'E': 12.57, 'O': 10.73, 'S': 7.81, 'R': 6.53, 'I': 6.18,
-    'N': 5.05, 'D': 4.99, 'M': 4.74, 'U': 4.63, 'T': 4.34, 'C': 3.88,
-    'L': 2.78, 'P': 2.52, 'V': 1.67, 'G': 1.30, 'H': 1.28, 'Q': 1.20,
-    'B': 1.04, 'F': 1.02, 'Z': 0.47, 'J': 0.40, 'X': 0.21, 'K': 0.02,
-    'Y': 0.01, 'W': 0.01
-}
-
-def decrypt_caesar(ciphertext, shift):
-    decrypted_text = []
-    for char in ciphertext:
-        if char.isalpha():
-            shift_amount = shift if char.islower() else shift % 26
-            decrypted_char = chr((ord(char) - shift_amount - 97) % 26 + 97) if char.islower() else chr((ord(char) - shift_amount - 65) % 26 + 65)
-            decrypted_text.append(decrypted_char)
-        else:
-            decrypted_text.append(char)
-    return ''.join(decrypted_text)
-
-def frequency_analysis(ciphertext):
-    counter = Counter(filter(str.isalpha, ciphertext.upper()))
-    total_chars = sum(counter.values())
-    char_freq = {char: (count / total_chars) * 100 for char, count in counter.items()}
-    return char_freq
-
-def score_text(text, freq_table):
-    text_freq = frequency_analysis(text)
-    score = sum(abs(text_freq.get(char, 0) - freq_table.get(char, 0)) for char in freq_table)
-    return score
-
-def decrypt_caesar_cipher(ciphertext, top_n=10):
-    possible_texts = [(decrypt_caesar(ciphertext, shift), shift) for shift in range(26)]
-    scored_texts = sorted(possible_texts, key=lambda x: score_text(x[0], portuguese_letter_freq))
-    return scored_texts[:top_n]
-
-ciphertext = "exemplo de texto cifrado aqui"
-
-top_n = 10
-resultados = decrypt_caesar_cipher(ciphertext, top_n)
-
-for texto, chave in resultados:
-print(f"Chave: {chave}, Texto: {texto}")
+![QUESTAO5](https://github.com/user-attachments/assets/fe79c5d0-d1ad-4178-8aab-49cbfa30b50a)
 
 QUESTÃO 6
 
-import numpy as np
-
-def encrypt(message, key):
-    message = message.upper().replace(" ", "")  
-    n = len(message)
-    
-   if n % 2 != 0:
-        message += 'X'
-        n += 1
-   message_nums = [ord(char) - ord('A') for char in message]
-   message_matrix = np.array(message_nums).reshape(-1, 2)
-    
-   encrypted_message = ''
-    for pair in message_matrix:
-        encrypted_pair = np.dot(key, pair) % 26
-        encrypted_message += ''.join([chr(num + ord('A')) for num in encrypted_pair])
-    
-return encrypted_message
-
-
-def decrypt(encrypted_message, key):
-    key_inv = np.linalg.inv(key)  # Calculando a matriz inversa da chave
-    key_inv = np.round(key_inv * np.linalg.det(key)).astype(int) % 26  # Convertendo para inteiros módulo 26
-    
-   encrypted_message = encrypted_message.upper().replace(" ", "")  # Convertendo para maiúsculas e removendo espaços
-   n = len(encrypted_message)
-  
-encrypted_nums = [ord(char) - ord('A') for char in encrypted_message]
-encrypted_matrix = np.array(encrypted_nums).reshape(-1, 2)
-    
-decrypted_message = ''
-for pair in encrypted_matrix:
-        decrypted_pair = np.dot(key_inv, pair) % 26
-        decrypted_message += ''.join([chr(num + ord('A')) for num in decrypted_pair])
-    
-return decrypted_message
-
-key = np.array([[3, 5], [7, 2]])  # Chave fixa para simplificação
-message = "HELLO WORLD"
-
-encrypted_message = encrypt(message, key)
-print(f"Mensagem encriptada: {encrypted_message}")
-
-decrypted_message = decrypt(encrypted_message, key)
-print(f"Mensagem decriptada: {decrypted_message}")
-
-
-
-
-
-
+![questao6](https://github.com/user-attachments/assets/2dce4469-fa36-4b46-91de-61c2275c8d3e)
 
