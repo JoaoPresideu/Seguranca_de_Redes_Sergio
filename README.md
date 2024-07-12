@@ -51,6 +51,7 @@ Controle de Acesso: Restringe o acesso a recursos e informações apenas para us
 Autenticação: Processo de verificação da identidade de um usuário ou dispositivo antes de permitir o acesso a recursos, normalmente usando senhas, tokens ou biometria.
 Controle de Integridade: Garante que os dados não foram alterados ou corrompidos de forma não autorizada, frequentemente usando somas de verificação (hashes) para verificar a integridade dos dados.
 Esses mecanismos trabalham de forma integrada para garantir a confidencialidade, integridade, disponibilidade e autenticidade das informações, essenciais para a segurança em redes de computadores.
+
 QUESTÃO 6
 
 O sistema deve manter os números de identificação pessoal confidenciais, tanto no sistema do 
@@ -61,5 +62,7 @@ Já a disponibilidade do sistema host é importante para o bem-estar econômico 
 
 
 QUESTÃO 7
+
+1.jpg
 
 
