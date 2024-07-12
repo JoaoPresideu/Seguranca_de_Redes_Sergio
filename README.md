@@ -185,10 +185,8 @@ def decrypt_caesar_cipher(ciphertext, top_n=10):
     scored_texts = sorted(possible_texts, key=lambda x: score_text(x[0], portuguese_letter_freq))
     return scored_texts[:top_n]
 
-# Texto cifrado de exemplo
 ciphertext = "exemplo de texto cifrado aqui"
 
-# Número de textos claros mais prováveis a serem exibidos
 top_n = 10
 resultados = decrypt_caesar_cipher(ciphertext, top_n)
 
@@ -199,16 +197,13 @@ QUESTÃO 6
 
 import numpy as np
 
-# Função para encriptar uma mensagem usando a cifra de Hill 2x2
 def encrypt(message, key):
-    message = message.upper().replace(" ", "")  # Convertendo para maiúsculas e removendo espaços
+    message = message.upper().replace(" ", "")  
     n = len(message)
     
-   # Ajustando o tamanho da mensagem para um múltiplo de 2
    if n % 2 != 0:
         message += 'X'
         n += 1
-    
    message_nums = [ord(char) - ord('A') for char in message]
    message_matrix = np.array(message_nums).reshape(-1, 2)
     
@@ -217,9 +212,9 @@ def encrypt(message, key):
         encrypted_pair = np.dot(key, pair) % 26
         encrypted_message += ''.join([chr(num + ord('A')) for num in encrypted_pair])
     
-    return encrypted_message
+return encrypted_message
 
-# Função para decriptar uma mensagem usando a cifra de Hill 2x2
+
 def decrypt(encrypted_message, key):
     key_inv = np.linalg.inv(key)  # Calculando a matriz inversa da chave
     key_inv = np.round(key_inv * np.linalg.det(key)).astype(int) % 26  # Convertendo para inteiros módulo 26
