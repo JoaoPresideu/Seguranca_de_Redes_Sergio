@@ -63,6 +63,6 @@ Já a disponibilidade do sistema host é importante para o bem-estar econômico 
 
 QUESTÃO 7
 
-https://raw.githubusercontent.com/JoaoPresideu/Seguranca_de_Redes_Sergio/main/1.jpg?token=GHSAT0AAAAAACUMBLHQYP6LZLBCGGBQYGX2ZURMJQQ
+![QUESTÃO 7](https://raw.githubusercontent.com/JoaoPresideu/Seguranca_de_Redes_Sergio/main/1.jpg?token=GHSAT0AAAAAACUMBLHQYP6LZLBCGGBQYGX2ZURMJQQ)
 
 
