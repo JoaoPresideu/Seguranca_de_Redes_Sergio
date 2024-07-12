@@ -64,7 +64,7 @@ Já a disponibilidade do sistema host é importante para o bem-estar econômico 
 
 QUESTÃO 7
 
-
+![1](https://github.com/user-attachments/assets/7161c67c-62fc-4d43-9f3e-4c21d2ee761d)
 
 
 
