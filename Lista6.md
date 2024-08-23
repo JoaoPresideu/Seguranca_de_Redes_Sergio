@@ -28,8 +28,12 @@ Por outro lado, modos como CBC (Cipher Block Chaining) usam tanto encriptação 
 
 QUESTÃO 6
 
-
+Para segurança. Porque usar três chaves distintas torna o processo de encriptação mais seguro, pois cada etapa usa uma chave única, dificultando muito a possibilidade de que um atacante consiga quebrar a cifra. Essa configuração aumenta a resistência contra ataques, tornando-a a melhor escolha para segurança.
 
 QUESTÃO 7
+
+
+
+
 
 
