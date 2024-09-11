@@ -62,11 +62,42 @@ Testando: Para x = 6:
 6_13 mod 35 = 6
 x=6 satisfaz a congruência. O número x entre 0 e 28 que satisfaz 𝑥_85 ≡ 6 mod 35 é x=6.
 
-QUESTÃO 6
-
+QUESTÃO 6 X
 
 QUESTÃO 7
 
+Descompondo 2046=2⋅1023
+Portanto, s = 1 e d = 1023.
+
+2_d mod 2047: 2_1023 mod 2047
+
+2¹ mod 2047: 2¹ mod 2047 = 2
+
+2² ⋅ 1023  =2 ⋅ 1023 = 2046
+2_2046 mod 2047 = 1 (por definição de pseudoprimo)
+2_1023 ≡ − 1 mod 2047, logo 2047 é um pseudo-primo forte à base 2.
+
 QUESTÃO 8
+
+1.Combinar x ≡ 2 mod 3 e x ≡ 2 mod 7
+x ≡ 2 mod lcm(3,7)
+x ≡ 2 mod 21
+
+2.Combinar x ≡ 2 mod 21 com x ≡ 3 mod 5
+Substituimos x = 21k + 2 na congruência x ≡ 3 mod 5: 21k+2 ≡ 3 mod 5
+Simplificamos: 21 ≡ 1 mod 5
+1k + 2  ≡3 mod5
+k + 2 ≡ 3 mod5
+k ≡ 1 mod5
+k = 5m+1
+
+3. Substituir k = 5m + 1:
+x = 21(5m + 1) + 2
+x = 105m + 21 + 2
+x = 105m + 23
+x ≡ 23 mod 105
+A menor solução positiva será x=23.
+
+
 
 
